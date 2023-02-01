@@ -14,21 +14,28 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller{
 
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function add_project_view(){
         return view('admin.add_project');
       }
 
 
     public function redirect(){
-         $usertype=Auth::user()->is_admin;
-             if($usertype=='1'){
-                $proj='project';
-                return $this->index();
-                }
-            else{
+        //  $usertype=Auth::user()->is_admin;
+        //      if($usertype=='1'){
+        //         $proj='project';
+        //         return $this->index();
+        //         }
+        //     else{
               $dat = Topics::paginate(4);
               return view('home', compact('dat'));
-            }
+
      }
 
 

@@ -12,44 +12,12 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <div class="container-fluid">
     @foreach ($data as $det )
 
-      <div class="row" style="margin-top:-17px; background-color:#89CFF0;">
+       <div class="row">
+         <div class="col-sm h-50" style="padding:10px; margin-left:-15px; margin-top:-7px;">
+            <span style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> <b> Title :</b> <span> {{ $det->title }} </span> </span>
+         </div>
+     </div>
 
-            <div class="col-sm h-50">
-                <h5 style="color: white; padding:10px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-                    <b> {{ $det->title }} </b> </h5>
-            </div>
-      </div>
-
-        <div class="row bg-light" style="margin-top:10px;">
-
-             <div class="col-sm-1 border">
-                <p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" >Type </p>
-             </div>
-
-             <div class="col-sm-2 border">
-                <small style="margin-right:15px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> {{ $det->category }} </small>
-             </div>
-
-
-             <div class="col-sm-1 border">
-                <p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Posted </p>
-             </div>
-
-            <div class="col-sm-2 border">
-                <small style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> {{ $det->created_at }} </small>
-            </div>
-
-             <div class="col-sm-1"></div>
-
-            <div class="col-sm-1 border">
-                <p style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Due </p>
-            </div>
-
-            <div class="col-sm-2 border">
-              <small style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> {{ $det->duedate }} </small>
-            </div>
-
-       </div>
      @endforeach
  </div>
 
@@ -74,37 +42,45 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 
-
-
-   <div class="row">
-
-     <div class="col-sm-9" style="margin-top:5px;">
-        <div class="row" style="margin-top:10px;">
-            <div class="col border" style="margin-left:5px; padding:10px;" >
+        <div class="row">
+            <div class="col-sm-9 border" style="padding:10px; margin-left:-15px; margin-top:7px;">
                 <span style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> <b>Topic</b> </span> <br>
-                <span style="padding-top:3px;margin-bottom:10px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" > {{$det->subtopic}} </span>
+                <span style="font-family:League Spartan, Fredoka One, Aileron, Bebas Neue, Zeld;" > {{$det->subtopic}} </span>
             </div>
-        </div>
+            <div class="col-sm-3 border bg-light" style="margin-left:15px;padding:10px; margin-top:7px;">
+                <div class="row ">
+                    <div class="col-sm">
+                      <ul>
+                        <small style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top:4px;" >Category : <span style="margin-left:15px;"> {{ $det->category }} </span>  </small> <br>
+                        <small style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Posted : <span style="margin-left:25px;">
+                          {{ date('d-m-Y', strtotime($det->created_at)); }} </span> </small> <br>
+                        <small style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Due-date : <span style="margin-left:14px;"> {{ $det->duedate }} </span> </small>
+                      </ul>
+                    </div>
+                </div>
 
-    <div class="row " style="margin-top:30px; ">
-        <div class="col-sm border" style="margin-left:5px;" >
+          </div>
+
+     </div>
+
+
+    <div class="row " style="margin-top:40px;">
+        <div class="col-sm-9 border" style="padding:10px; margin-left:-15px;">
              <span style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" > <b> Instructions </b> </span>
                 <ul class="list-inline">
-             <li> <span style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> Sources: 3 sources required </span> </li>
-             <li> <span style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> Citation Style: APA 7th edition </span> </li>
-             <li> <span style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> 300 words per page – up to 50 more words per page </span> </li>
-             <li> <span style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> unique, and free of plagiarism. All assignments go through plagiarism-detection </span> </li>
+             <li> <span style="font-family:League Spartan, Fredoka One, Aileron, Bebas Neue, Zeld;"> Sources: 3 sources required </small> </li>
+             <li> <span style="font-family:League Spartan, Fredoka One, Aileron, Bebas Neue, Zeld;"> Citation Style: APA 7th edition </small> </li>
+             <li><span style="font-family:League Spartan, Fredoka One, Aileron, Bebas Neue, Zeld;"> 300 words per page – up to 50 more words per page </span> </li>
+             <li> <span style="font-family:League Spartan, Fredoka One, Aileron, Bebas Neue, Zeld;"> unique, and free of plagiarism. All assignments go through plagiarism-detection </span> </li>
             </ul>
         </div>
-    </div>
 
-</div>
 
-    <div class="col-sm-2 bg-light border h-auto" style="margin-top:15px; margin-left:30px;">
+    <div class="col-sm-3 bg-light border h-auto" style="margin-left:15px; ">
 
-      <div class="row">
-        <div class="prc">
-        <span  style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> Price:</span>
+      <div class="row" style="margin-left: 15px;">
+        <div class="prc" style="margin-top:7px;">
+        <small  style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> Price:</small>
             @foreach ($data as $det )
         <small style="margin-left: 13px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> {{ $det->price}} KES  </small>
         </div>
@@ -114,13 +90,13 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <input type="hidden" value="{{ $det->id }}" name="topid">
            @endforeach
 
-        <div class="pay" style="margin-top:10px;">
-            <span style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Payment Mode</span>
-            <div class="form-check">
+        <div class="pay">
+            <small style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; ">Payment-mode</small>
+            <div class="form-check" style="margin-left:20px;">
                 <input class="form-check-input" type="radio" name="pay_mode" value="mpesa"   style="margin-left:4px ;">
                 <small style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> mpesa  </small>
             </div>
-            <div class="form-check">
+            <div class="form-check" style="margin-left:20px;">
             <input class="form-check-input" type="radio" name="pay_mode" value="airtel" style="margin-left:4px; ">
             <small style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">airtel </small>
             </div>
@@ -143,29 +119,29 @@ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </div>
 
 <!-- chat and reply section start --->
-    <div class="row">
-        <div class="col-sm-4" style="margin-top:20px;">
+    <div class="row"  style="margin-top:100px;">
+        <div class="col-sm-4">
 
             <div class="row" >
-                <div class="col-sm" style="margin-left:3px; ">
+                <div class="col-sm" style="margin-left:-16px; ">
                 <small style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> <b> Reply to this post </b> </small>
 
                     <form method="post" action="{{ url('addcomment') }}">
                         @csrf
 
-                    <textarea name="comment" id="reply" cols="21" rows="6"></textarea> <br>
+                    <textarea name="comment" id="reply" cols="28" rows="4"></textarea> <br>
                             @foreach ($data as $det )
                     <input type="hidden" name="post_id"  value={{ $det->id }} >
                             @endforeach
-                    <button class="btn btn-success btn-sm" type="submit"style="float:right;">send</button>
+                    <button class="btn btn-success btn-sm" type="submit"style="float:right; margin-right:40px; margin-top:15px;margin-bottom:50px;">send</button>
                     </form>
                 </div>
             </div>
 
         </div>
+<div class="col-sm-1"></div>
 
-
-    <div class="col-sm-8 h-auto" style="margin-top: 20px;">
+    <div class="col-sm-6 h-auto" style="margin-top:10px;">
 
         <div class="row" >
             <small style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-left:15px;"> <b>Chats  </b></small>

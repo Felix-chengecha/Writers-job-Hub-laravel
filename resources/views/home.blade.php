@@ -11,7 +11,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-            @include('layouts.header')
+            {{-- @include('layouts.header') --}}
             @include('layouts.container')
                 </div>
             </div>

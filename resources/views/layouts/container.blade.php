@@ -3,39 +3,38 @@
 <div class="container fluid">
 
 
-<div class="row" >
+<div class="row" style="background-color: #89CFF0; margin-top:-15px;">
 
-        <div class="col-sm-1 border" style="padding: 10px; background-color: #89CFF0;">
-          <a href="{{ url('home') }}" style=" text-decoration: none; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">All</a>
+        <div class="col-sm-2 " style="padding: 20px; background-color: #89CFF0;">
+          <a href="{{ url('home') }}" style="color:	#36454F; text-decoration: none; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: medium;">All Jobs</a>
         </div>
 
-        <div class="col-sm-2 border" style="padding: 10px; background-color: #89CFF0;">
-            <a href="{{ url('myjobs') }}" style=" text-decoration: none;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> My jobs </a>
+        <div class="col-sm-2 " style="padding: 20px; background-color: #89CFF0;">
+            <a href="{{ url('myjobs') }}" style="color:	#36454F; text-decoration: none;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: medium;"> My Jobs </a>
         </div>
 
-        <div class="col-sm-2 border" style="padding: 10px; background-color: #89CFF0;">
-          <a href="#" style="text-decoration: none; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" id="dropdownMenuLink" data-bs-toggle="dropdown"> Categories </a>
+        <div class="col-sm-2 " style="padding: 20px; background-color: #89CFF0;">
+          <a href="#" style="text-decoration: none; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color:	#36454F; font-size: medium;" id="dropdownMenuLink" data-bs-toggle="dropdown"> Categories </a>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <li><a class="dropdown-item" href="{{ url('category', 'article') }}">Articles</a></li>
             <li><a class="dropdown-item" href="{{ url('category', 'academic') }}">Academic writting</a></li>
             <li><a class="dropdown-item" href="{{ url('category', 'content') }}">Content writting</a></li>
          </ul>
        </div>
+<div class="col-sm-1"></div>
 
-        <div class="col-sm-4 border" style="padding: 10px; background-color: #89CFF0;">
-         <form action="{{ url('wsearch') }}" method="GET" >
+        <div class="col-sm-3" style="padding: 10px; background-color: #89CFF0;">
+            <form action="{{ url('wsearch') }}" method="GET" >
                 @csrf
-          <div class="row">
-          <div class="col">
-          <input type="text" name="search"  class="form-control"  placeholder="Search" style="width:200px;">
-          </div>
-          <div class="col" style="margin-top:4px;">
-          <button type="submit" class="btn btn-success btn-sm" ><h6 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">search</h6> </button>
-          </div>
-          </div>
-          </form>
+          <input type="text" name="search"  class="form-control"  placeholder="Search" style="width:300px;">
         </div>
-    </div>
+        <div class="col-sm-2" style="padding: 10px;">
+          <button type="submit" class="btn btn-secondary  btn-sm btn-rounded" style=" margin-left:50px;" ><h6 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">search</h6> </button>
+        </form>
+
+        </div>
+        </div>
+
 <!-- sub header end -->
 
 
@@ -53,13 +52,13 @@
 
     <div class="row h-auto" style="margin-top:6px; ">
         <div class="col-sm-10 " >
-            <span style="padding: 2px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> {{ $data->subtopic }}</span> <br>
+            <small style="padding: 2px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> {{ $data->subtopic }}</small> <br>
         </div>
 
         <div class="col-sm-2">
             <a href="{{ url('nav',$data->id) }}" style="text-decoration:none; padding: 2px;"> <i class="fa-solid fa-pen"></i> </a>
-            <small style="padding: 2px; margin-left:10px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> {{ $data->price }}: KES</small> <br>
-            <small style="padding: 2px; margin-left:35px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; "> fixed price </small>
+            <small style="margin-left:10px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> {{ $data->price }}.KES</small> <br>
+            <small style="margin-left:35px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; "> fixed price </small>
          </div>
 
 

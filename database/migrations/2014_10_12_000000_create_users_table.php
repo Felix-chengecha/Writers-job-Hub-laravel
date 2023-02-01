@@ -17,7 +17,8 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('phone')->unique();
-            $table->boolean('is_admin')->default(0);
+            $table->tinyInteger('role')->default(0);
+            //0=user 1=admin
             $table->boolean('is_banned')->default(0);
             $table->integer('rank')->default(0);
             $table->string('email')->unique();

@@ -9,7 +9,7 @@
                     </div>
                     <div class="col-sm-9">
                        <h4 class="display-4 fw-bold;" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align:center;" > A warm welcome!</h4>
-                       <h6 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align:center;" > Heroic Writers offers article, content and academic writing jobs to all people in variety of industries </h6>
+                       <span style="font-family:League Spartan, Fredoka One, Aileron, Bebas Neue, Zeld;"> We offer article, content and academic writing jobs to all people in variety of industries </span>
                     </div>
                 </div>
 
